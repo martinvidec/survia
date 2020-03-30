@@ -2,8 +2,8 @@
 
 Beginnend mit einer Umfrage zur Nationalratswahl 2019 versucht Survia aktuelle Themen aufzugreifen und Meinungen einzuholen. Das Ziel ist es unabhängige Umfragen in Echtzeit zu liefern.
 
-Website: https://www.survia.info/
+Die Links zur Installation der App befinden sich auf https://www.survia.info/
 
-Unabhängigkeit und Transparenz der Umfragen kann nur gewährleistet werden, wenn sichergestellt ist, dass Survia's Quellcode Dritten zur Einsicht zu Verfügung steht. Dazu dient dieses Repository, in dem sich der gesamte Survia Quellcode befindet.
+Unabhängigkeit und Transparenz der Umfragen kann nur gewährleistet werden, wenn sichergestellt ist, dass Survia's Quellcode jedem zur Einsicht zu Verfügung steht. Dazu dient dieses Repository, in dem sich der gesamte Survia Quellcode befindet.
 
 Hiermit kann sichergestellt werden, dass Survia keine sensiblen Daten über seine Benutzer und ihr Verhalten ausliest und an Dritte weitergibt.
