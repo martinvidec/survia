@@ -8,4 +8,6 @@ Unabhängigkeit und Transparenz von Umfragen kann nur gewährleistet werden, wen
 
 Hiermit kann sichergestellt werden, dass Survia keine sensiblen Daten über seine Benutzer und ihr Verhalten ausliest und an Dritte weitergibt.
 
+Im Moment befindet sich das Repository im noch Aufbau.
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e0e9ea3741f49f6ad0c17a8ecd949ee)](https://app.codacy.com/manual/rx451g/survia?utm_source=github.com&utm_medium=referral&utm_content=martinvidec/survia&utm_campaign=Badge_Grade_Settings)
