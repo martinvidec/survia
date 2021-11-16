@@ -1,4 +1,4 @@
-package at.videc.survia.survianode;
+package at.videc.survia.node;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
