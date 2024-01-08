@@ -3,8 +3,8 @@ package at.videc.survia.node.domain.model;
 import at.videc.survia.core.domain.model.ICodedValue;
 import at.videc.survia.core.domain.model.IIndicator;
 import at.videc.survia.node.domain.model.base.BaseEntity;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 

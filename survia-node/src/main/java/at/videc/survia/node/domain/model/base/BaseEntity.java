@@ -1,8 +1,11 @@
 package at.videc.survia.node.domain.model.base;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 
-import javax.persistence.*;
+
 import java.io.Serializable;
 
 @MappedSuperclass

@@ -1,7 +1,6 @@
 package at.videc.survia.node.repo;
 
 import at.videc.survia.node.domain.model.Dataset;
-import at.videc.survia.node.domain.model.QDataset;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,31 +16,31 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 
-@PreAuthorize("hasRole('USER')")
-@RepositoryRestResource()
+//@PreAuthorize("hasRole('ROLE_USER')")
+@RepositoryRestResource
 public interface IDatasetRepo extends JpaRepository<Dataset, Long>, QuerydslPredicateExecutor<Dataset>/*, QuerydslBinderCustomizer<QDataset>*/ {
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasPermission(#entity, 'urn:survia:scopes:read')")
     @Override
-    <T extends Dataset> T save(final T entity);
+    <T extends Dataset> T save(final @Param("entity") T entity);
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("@authzContext.hasScopePermission('urn:survia:scopes:create')")
     @Override
     <T extends Dataset> List<T> saveAll(Iterable<T> var1);
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Override
     void deleteById(Long id);
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Override
     void delete(Dataset entity);
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Override
     void deleteAll(Iterable<? extends Dataset> entities);
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Override
     void deleteAll();
 

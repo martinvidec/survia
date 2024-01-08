@@ -2,8 +2,9 @@ package at.videc.survia.node.domain.model;
 
 import at.videc.survia.core.domain.model.ICodedValue;
 import at.videc.survia.node.domain.model.base.BaseEntity;
+import jakarta.persistence.Entity;
 
-import javax.persistence.Entity;
+
 import java.math.BigDecimal;
 
 @Entity

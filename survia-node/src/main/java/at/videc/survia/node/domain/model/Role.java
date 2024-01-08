@@ -2,11 +2,11 @@ package at.videc.survia.node.domain.model;
 
 import at.videc.survia.node.domain.model.base.BaseEntity;
 import at.videc.survia.node.domain.model.constants.RoleName;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 
 @Entity
 public class Role extends BaseEntity<Long> {

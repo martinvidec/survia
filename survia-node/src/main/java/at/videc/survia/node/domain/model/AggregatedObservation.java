@@ -1,8 +1,11 @@
 package at.videc.survia.node.domain.model;
 
 import at.videc.survia.node.domain.model.base.BaseEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 
 @Entity(name = "AGGREGATED_OBSERVATIONS_V")

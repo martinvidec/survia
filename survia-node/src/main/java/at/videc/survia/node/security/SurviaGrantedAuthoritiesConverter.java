@@ -16,13 +16,12 @@ import java.util.stream.Collectors;
 
 public class SurviaGrantedAuthoritiesConverter implements Converter<Jwt, Collection<GrantedAuthority>> {
 
-    public static final String USERNAME_CLAIM = "email";
+    public static final String USERNAME_CLAIM = "preferred_username";
 
     private JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter;
 
     private IUserService userService;
 
-    @Autowired
     public SurviaGrantedAuthoritiesConverter(IUserService userService) {
         this.jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
         this.userService = userService;

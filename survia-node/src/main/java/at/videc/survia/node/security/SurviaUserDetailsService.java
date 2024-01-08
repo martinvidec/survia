@@ -34,8 +34,7 @@ public class SurviaUserDetailsService implements UserDetailsService {
 
         List<? extends GrantedAuthority> grantedAuthorities = user.getRoles().stream().map(this::roleToAuthority).collect(Collectors.toList());
 
-        UserDetails userDetails = new SurviaUserDetails(grantedAuthorities, "", user.getUsername(), false, false, false, false);
-        return userDetails;
+        return new SurviaUserDetails(grantedAuthorities, "", user.getUsername(), false, false, false, false);
     }
 
     private SimpleGrantedAuthority roleToAuthority(Role role) {

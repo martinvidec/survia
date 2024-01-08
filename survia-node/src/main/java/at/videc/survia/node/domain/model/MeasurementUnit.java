@@ -2,9 +2,9 @@ package at.videc.survia.node.domain.model;
 
 import at.videc.survia.core.domain.model.IMeasurementUnit;
 import at.videc.survia.node.domain.model.base.BaseEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
 
 @Entity
 public class MeasurementUnit extends BaseEntity<Long> implements IMeasurementUnit {

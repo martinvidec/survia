@@ -1,6 +1,7 @@
 package at.videc.survia.node.configuration;
 
 import at.videc.survia.node.domain.model.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.core.mapping.RepositoryDetectionStrategy;

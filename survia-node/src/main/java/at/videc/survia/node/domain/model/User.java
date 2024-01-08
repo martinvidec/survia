@@ -1,8 +1,8 @@
 package at.videc.survia.node.domain.model;
 
 import at.videc.survia.node.domain.model.base.BaseEntity;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.util.Set;
 
 /**

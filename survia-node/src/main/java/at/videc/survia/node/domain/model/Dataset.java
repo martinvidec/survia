@@ -2,9 +2,11 @@ package at.videc.survia.node.domain.model;
 
 import at.videc.survia.core.domain.model.IDataset;
 import at.videc.survia.node.domain.model.base.BaseEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import java.util.Arrays;
+
 
 @Entity
 public class Dataset extends BaseEntity<Long> implements IDataset {
@@ -15,8 +17,8 @@ public class Dataset extends BaseEntity<Long> implements IDataset {
     private String description;
     @Column(name = "ORGANIZATION", nullable = false)
     private String organization;
-    @Column(name = "LOGO", nullable = true)
-    private Byte[] logo;
+//    @Column(name = "LOGO", nullable = true)
+//    private Byte[] logo;
 
     @Override
     public String getName() {
@@ -38,11 +40,12 @@ public class Dataset extends BaseEntity<Long> implements IDataset {
 
     @Override
     public Byte[] getLogo() {
-        return logo;
+//        return logo;
+        return null;
     }
 
     public void setLogo(Byte[] logo) {
-        this.logo = logo;
+//        this.logo = logo;
     }
 
     @Override

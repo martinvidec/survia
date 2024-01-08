@@ -3,7 +3,7 @@ package at.videc.survia.node.configuration.properties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "at.videc.survia.node.admin")
-public class AdminProperties {
+public class SurviaAdminProperties {
 
     private String username;
 

@@ -2,16 +2,16 @@ package at.videc.survia.node.domain.model;
 
 import at.videc.survia.core.domain.model.IObservation;
 import at.videc.survia.node.domain.model.base.BaseEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.Instant;
 
 @Entity
-public class Observation extends BaseEntity<Long> implements IObservation {
+public class Observation extends BaseEntity<Long> implements IObservation<BigDecimal> {
 
     @Column(name = "CREATED", nullable = false)
     private Instant created;

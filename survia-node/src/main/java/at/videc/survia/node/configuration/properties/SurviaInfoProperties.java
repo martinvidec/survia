@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 
 @ConfigurationProperties(prefix = "at.videc.survia.node.info")
-public class InfoProperties {
+public class SurviaInfoProperties {
 
     private String version;
     private String apiVersion;
