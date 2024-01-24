@@ -1,9 +1,7 @@
 package at.videc.survia.node.domain.model.base;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
 
 import java.io.Serializable;
@@ -12,7 +10,8 @@ import java.io.Serializable;
 public abstract class BaseEntity<T extends Serializable> {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hibernate_sequence_generator")
+    @SequenceGenerator(name = "hibernate_sequence_generator", sequenceName = "hibernate_sequence", allocationSize = 1)
     T id;
 
     public T getId() {

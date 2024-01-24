@@ -16,8 +16,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 
-//@PreAuthorize("hasRole('ROLE_USER')")
 @RepositoryRestResource
+@PreAuthorize("hasRole('USER')")
 public interface IDatasetRepo extends JpaRepository<Dataset, Long>, QuerydslPredicateExecutor<Dataset>/*, QuerydslBinderCustomizer<QDataset>*/ {
 
     @PreAuthorize("hasPermission(#entity, 'urn:survia:scopes:read')")
