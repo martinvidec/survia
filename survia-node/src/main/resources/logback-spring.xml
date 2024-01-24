@@ -5,58 +5,6 @@
 
     <property name="LOGS" value="./logs"/>
 
-    <!--    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
-    <!--        <destination>localhost:5000</destination>-->
-
-    <!--        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">-->
-    <!--            <providers>-->
-    <!--                <timestamp>-->
-    <!--                    <timeZone>UTC</timeZone>-->
-    <!--                </timestamp>-->
-    <!--                <pattern>-->
-    <!--                    <pattern>-->
-    <!--                        {-->
-    <!--                        "severity": "%level",-->
-    <!--                        "service": "${springAppName:-}",-->
-    <!--                        "trace": "%X{X-B3-TraceId:-}",-->
-    <!--                        "span": "%X{X-B3-SpanId:-}",-->
-    <!--                        "exportable": "%X{X-Span-Export:-}",-->
-    <!--                        "pid": "${PID:-}",-->
-    <!--                        "thread": "%thread",-->
-    <!--                        "class": "%logger{40}",-->
-    <!--                        "rest": "%message"-->
-    <!--                        }-->
-    <!--                    </pattern>-->
-    <!--                </pattern>-->
-    <!--            </providers>-->
-    <!--        </encoder>-->
-    <!--    </appender>-->
-
-    <!--    <appender name="logstash-console" class="ch.qos.logback.core.ConsoleAppender">-->
-    <!--        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">-->
-    <!--            <providers>-->
-    <!--                <timestamp>-->
-    <!--                    <timeZone>UTC</timeZone>-->
-    <!--                </timestamp>-->
-    <!--                <pattern>-->
-    <!--                    <pattern>-->
-    <!--                        {-->
-    <!--                        "severity": "%level",-->
-    <!--                        "service": "${springAppName:-}",-->
-    <!--                        "trace": "%X{X-B3-TraceId:-}",-->
-    <!--                        "span": "%X{X-B3-SpanId:-}",-->
-    <!--                        "exportable": "%X{X-Span-Export:-}",-->
-    <!--                        "pid": "${PID:-}",-->
-    <!--                        "thread": "%thread",-->
-    <!--                        "class": "%logger{40}",-->
-    <!--                        "rest": "%message"-->
-    <!--                        }-->
-    <!--                    </pattern>-->
-    <!--                </pattern>-->
-    <!--            </providers>-->
-    <!--        </encoder>-->
-    <!--    </appender>-->
-
     <appender name="console"
               class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -89,8 +37,6 @@
     <root level="debug">
         <!--        <appender-ref ref="rolling-file" />-->
         <appender-ref ref="console"/>
-        <!--        <appender-ref ref="logstash-console" />-->
-        <!--        <appender-ref ref="logstash" />-->
     </root>
 
     <!-- LOG "at.videc.survia*" at TRACE level -->

@@ -16,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -51,15 +52,11 @@ public class SurviaSecurityConfig {
                         authorize.anyRequest().authenticated();
                     });
         } else {
-            http.authorizeHttpRequests(authorize -> {
-                authorize.requestMatchers("/status", "/swagger-ui/**").anonymous();
-                authorize.anyRequest().authenticated();
-                    })
-                    .oauth2ResourceServer(
-                            oauth2ResourceServer -> oauth2ResourceServer.jwt(
-                                    jwt -> jwt.decoder(jwtDecoder())
-                            )
-                    )
+            http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+                    .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.jwt(jwt -> {
+                        jwt.decoder(jwtDecoder());
+                        jwt.jwtAuthenticationConverter(jwtAuthenticationConverter());
+                    }))
                     .addFilterAfter(createPolicyEnforcerFilter(), BearerTokenAuthenticationFilter.class);
         }
         return http.build();
@@ -82,6 +79,13 @@ public class SurviaSecurityConfig {
     @Bean
     JwtDecoder jwtDecoder() {
         return NimbusJwtDecoder.withJwkSetUri(this.securityProperties.getJwkSetUri()).build();
+    }
+
+    @Bean
+    public JwtAuthenticationConverter jwtAuthenticationConverter() {
+        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
+        converter.setJwtGrantedAuthoritiesConverter(new KeycloakRealmRolesConverter());
+        return converter;
     }
 
 //    /**
