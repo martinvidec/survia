@@ -2,8 +2,11 @@ package at.videc.survia.node.domain.model;
 
 import at.videc.survia.core.domain.model.IDataset;
 import at.videc.survia.node.domain.model.base.BaseEntity;
+import at.videc.survia.node.domain.serializer.Base64Deserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Lob;
 
 import java.util.Arrays;
 
@@ -17,8 +20,10 @@ public class Dataset extends BaseEntity<Long> implements IDataset {
     private String description;
     @Column(name = "ORGANIZATION", nullable = false)
     private String organization;
-//    @Column(name = "LOGO", nullable = true)
-//    private Byte[] logo;
+    @Lob
+    @Column(name = "LOGO", nullable = true)
+    @JsonDeserialize(using = Base64Deserializer.class)
+    private byte[] logo;
 
     @Override
     public String getName() {
@@ -39,13 +44,12 @@ public class Dataset extends BaseEntity<Long> implements IDataset {
     }
 
     @Override
-    public Byte[] getLogo() {
-//        return logo;
-        return null;
+    public byte[] getLogo() {
+        return logo;
     }
 
-    public void setLogo(Byte[] logo) {
-//        this.logo = logo;
+    public void setLogo(byte[] logo) {
+        this.logo = logo;
     }
 
     @Override
